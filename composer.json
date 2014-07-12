@@ -23,9 +23,11 @@
 			"PatternLab\\PatternEngine\\Mustache": "src/"
 		}
 	},
+	"minimum-stability": "dev",
 	"require": {
 		"php":               ">=5.3.6",
-		"mustache/mustache": "v2.6.0"
+		"mustache/mustache": "v2.6.0",
+		"pattern-lab/styleguidekit-mustache-default": "dev-master"
 	},
 	"extra": {
 		"patternlab": {
