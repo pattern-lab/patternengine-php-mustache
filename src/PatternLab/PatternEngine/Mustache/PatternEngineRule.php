@@ -39,7 +39,7 @@ class PatternEngineRule extends Rule {
 		
 		$mustacheOptions                   = array();
 		$mustacheOptions["loader"]         = new PatternLoader(Config::$options["patternSourceDir"],array("patternPaths" => $options["patternPaths"]));
-		$mustacheOptions["partial_loader"] = new PatternLoader(Config::$options["patternSourceDir"],array("patternPaths" => $options["patternPaths"]));
+		$mustacheOptions["partials_loader"] = new PatternLoader(Config::$options["patternSourceDir"],array("patternPaths" => $options["patternPaths"]));
 		$mustacheOptions["helpers"]        = Helper::get();
 		
 		return new \Mustache_Engine($mustacheOptions);
@@ -55,7 +55,7 @@ class PatternEngineRule extends Rule {
 		
 		$mustacheOptions                   = array();
 		$mustacheOptions["loader"]         = new \Mustache_Loader_FilesystemLoader($options["templatePath"]);
-		$mustacheOptions["partial_loader"] = new \Mustache_Loader_FilesystemLoader($options["templatePath"]."/partials");
+		$mustacheOptions["partials_loader"] = new \Mustache_Loader_FilesystemLoader($partialsDir);
 		
 		return new \Mustache_Engine($mustacheOptions);
 		
