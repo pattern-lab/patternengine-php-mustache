@@ -55,7 +55,7 @@ class PatternEngineRule extends Rule {
 		
 		$mustacheOptions                   = array();
 		$mustacheOptions["loader"]         = new \Mustache_Loader_FilesystemLoader($options["templatePath"]);
-		$mustacheOptions["partials_loader"] = new \Mustache_Loader_FilesystemLoader($partialsDir);
+		$mustacheOptions["partials_loader"] = new \Mustache_Loader_FilesystemLoader($options["partialsPath"]);
 		
 		return new \Mustache_Engine($mustacheOptions);
 		
