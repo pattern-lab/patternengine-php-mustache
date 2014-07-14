@@ -20,9 +20,9 @@ use \PatternLab\PatternEngine\Rule;
 
 class PatternEngineRule extends Rule {
 	
-	public function __construct($options) {
+	public function __construct() {
 		
-		parent::__construct($options);
+		parent::__construct();
 		
 		$this->engineProp = "mustache";
 		
