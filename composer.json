@@ -29,6 +29,9 @@
 		"mustache/mustache": "v2.6.0"
 	},
 	"extra": {
+		"branch-alias": {
+			"dev-master": "dev-dev"
+		},
 		"patternlab": {
 			"config": [
 				{ "patternExtension": "mustache" }
