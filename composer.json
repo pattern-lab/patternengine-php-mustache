@@ -26,8 +26,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php":               ">=5.3.6",
-		"mustache/mustache": "v2.6.0",
-		"pattern-lab/styleguidekit-mustache-default": "dev-master"
+		"mustache/mustache": "v2.6.0"
 	},
 	"extra": {
 		"patternlab": {
