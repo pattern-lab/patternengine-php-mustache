@@ -35,12 +35,15 @@ class PatternEngineRule extends Rule {
 	*/	
 	public function getPatternLoader($options = array()) {
 		
-		Dispatcher::$instance->dispatch("mustacheRule.gatherHelpers");
+		Dispatcher::getInstance()->dispatch("mustacheRule.gatherHelpers");
 		
-		$mustacheOptions                   = array();
-		$mustacheOptions["loader"]         = new PatternLoader(Config::$options["patternSourceDir"],array("patternPaths" => $options["patternPaths"]));
-		$mustacheOptions["partials_loader"] = new PatternLoader(Config::$options["patternSourceDir"],array("patternPaths" => $options["patternPaths"]));
-		$mustacheOptions["helpers"]        = Helper::get();
+		//default var
+		$patternSourceDir = Config::getOption("patternSourceDir");
+		
+		$mustacheOptions                    = array();
+		$mustacheOptions["loader"]          = new PatternLoader($patternSourceDir,array("patternPaths" => $options["patternPaths"]));
+		$mustacheOptions["partials_loader"] = new PatternLoader($patternSourceDir,array("patternPaths" => $options["patternPaths"]));
+		$mustacheOptions["helpers"]         = Helper::get();
 		
 		return new \Mustache_Engine($mustacheOptions);
 		
