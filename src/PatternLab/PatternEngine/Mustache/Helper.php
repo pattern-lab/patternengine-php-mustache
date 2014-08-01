@@ -14,7 +14,7 @@ namespace PatternLab\PatternEngine\Mustache;
 
 class Helper {
 	
-	public static $helpers = array();
+	protected static $helpers = array();
 	
 	public static function add($tag,$function) {
 		
