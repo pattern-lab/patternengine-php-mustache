@@ -26,7 +26,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php":               ">=5.3.6",
-		"mustache/mustache": "v2.6.0"
+		"mustache/mustache": "v2.6.*"
 	},
 	"extra": {
 		"patternlab": {
