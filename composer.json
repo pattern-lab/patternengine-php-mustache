@@ -1,5 +1,5 @@
 {
-	"name":             "pattern-lab/patternengine-php-mustache",
+	"name":             "pattern-lab/patternengine-mustache",
 	"description":      "Mustache-based Pattern Engine for the PHP version of Pattern Lab",
 	"keywords":         ["mustache", "pattern lab", "pattern engine"],
 	"homepage":         "http://patternlab.io",
