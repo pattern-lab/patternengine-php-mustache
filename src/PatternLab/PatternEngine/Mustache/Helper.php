@@ -1,7 +1,7 @@
 <?php
 
 /*!
- * Mustache Helper Class 
+ * Mustache Helper Class
  *
  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
  * Licensed under the MIT license
