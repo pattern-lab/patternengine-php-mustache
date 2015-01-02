@@ -6,7 +6,7 @@
  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
  * Licensed under the MIT license
  *
- * Handles the collection of Mustache helpers so they can be added to the Mustache engine
+ * Handles the collection of Mustache helpers so they can be added to the Pattern loader
  *
  */
 
