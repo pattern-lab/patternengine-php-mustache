@@ -12,10 +12,6 @@
 
 namespace PatternLab\PatternEngine\Mustache;
 
-use \PatternLab\Config;
-use \PatternLab\Dispatcher;
-use \PatternLab\PatternEngine\Mustache\PatternLoader;
-use \PatternLab\PatternEngine\Mustache\Helper;
 use \PatternLab\PatternEngine\Rule;
 
 class PatternEngineRule extends Rule {
