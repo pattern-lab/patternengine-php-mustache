@@ -21,9 +21,7 @@ use \PatternLab\PatternEngine\Loader;
 class PatternLoader extends Loader {
 	
 	/**
-	* Load a new Mustache instance that uses the Pattern Loader
-	*
-	* @return {Object}       an instance of the Mustache engine
+	* Load a new Mustache instance that uses the Pattern Loadere
 	*/
 	public function __construct($options = array()) {
 		

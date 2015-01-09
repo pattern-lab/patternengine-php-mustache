@@ -18,8 +18,6 @@ class FilesystemLoader extends Loader {
 	
 	/**
 	* Load a new Mustache instance that uses the File System Loader
-	*
-	* @return {Object}       an instance of the Mustache engine
 	*/
 	public function __construct($options = array()) {
 		
