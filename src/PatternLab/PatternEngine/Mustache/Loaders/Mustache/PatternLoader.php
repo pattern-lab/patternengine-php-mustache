@@ -11,7 +11,7 @@
  *
  */
 
-namespace PatternLab\PatternEngine\Mustache;
+namespace PatternLab\PatternEngine\Mustache\Loaders\Mustache;
 
 use \PatternLab\PatternEngine\Util;
 

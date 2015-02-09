@@ -12,10 +12,6 @@
 
 namespace PatternLab\PatternEngine\Mustache;
 
-use \PatternLab\Config;
-use \PatternLab\Dispatcher;
-use \PatternLab\PatternEngine\Mustache\PatternLoader;
-use \PatternLab\PatternEngine\Mustache\Helper;
 use \PatternLab\PatternEngine\Rule;
 
 class PatternEngineRule extends Rule {
@@ -25,53 +21,7 @@ class PatternEngineRule extends Rule {
 		parent::__construct();
 		
 		$this->engineProp = "mustache";
-		
-	}
-	
-	/**
-	* Load a new Mustache instance that uses the Pattern Loader
-	*
-	* @return {Object}       an instance of the Mustache engine
-	*/	
-	public function getPatternLoader($options = array()) {
-		
-		Dispatcher::getInstance()->dispatch("mustacheRule.gatherHelpers");
-		
-		//default var
-		$patternSourceDir = Config::getOption("patternSourceDir");
-		
-		$mustacheOptions                    = array();
-		$mustacheOptions["loader"]          = new PatternLoader($patternSourceDir,array("patternPaths" => $options["patternPaths"]));
-		$mustacheOptions["partials_loader"] = new PatternLoader($patternSourceDir,array("patternPaths" => $options["patternPaths"]));
-		$mustacheOptions["helpers"]         = Helper::get();
-		
-		return new \Mustache_Engine($mustacheOptions);
-		
-	}
-	
-	/**
-	* Load a new Mustache instance that uses the File System Loader
-	*
-	* @return {Object}       an instance of the Mustache engine
-	*/
-	public function getFileSystemLoader($options = array()) {
-		
-		$mustacheOptions                   = array();
-		$mustacheOptions["loader"]         = new \Mustache_Loader_FilesystemLoader($options["templatePath"]);
-		$mustacheOptions["partials_loader"] = new \Mustache_Loader_FilesystemLoader($options["partialsPath"]);
-		
-		return new \Mustache_Engine($mustacheOptions);
-		
-	}
-	
-	/**
-	* Load a new Mustache instance that is just a vanilla Mustache rendering engine
-	*
-	* @return {Object}       an instance of the Mustache engine
-	*/
-	public function getVanillaLoader($options = array()) {
-		
-		return new \Mustache_Engine;
+		$this->basePath   = "\PatternLab\PatternEngine\Mustache";
 		
 	}
 	
