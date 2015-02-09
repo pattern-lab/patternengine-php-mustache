@@ -4,7 +4,7 @@ The Mustache PatternEngine allows you to use [Mustache](https://mustache.github.
 
 ## Installation
 
-Pattern Lab PHP uses [Composer](https://getcomposer.org/) to manage project dependencies. To install the default static assets run:
+Pattern Lab PHP uses [Composer](https://getcomposer.org/) to manage project dependencies. To install the Mustache PatternEngine:
 
     composer require pattern-lab/patternengine-mustache
 
