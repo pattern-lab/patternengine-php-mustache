@@ -1,6 +1,6 @@
 {
 	"name":             "pattern-lab/patternengine-mustache",
-	"description":      "Mustache-based Pattern Engine for the PHP version of Pattern Lab ",
+	"description":      "Mustache-based PatternEngine for Pattern Lab.",
 	"keywords":         ["mustache", "pattern lab", "pattern engine"],
 	"homepage":         "http://patternlab.io",
 	"license":          "MIT",
