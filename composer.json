@@ -33,7 +33,8 @@
 			"config": [
 				{
 					"patternExtension": "mustache",
-					"lineageMatch": "{{>([ ]+)?([A-Za-z0-9-_]+)(?:\:[A-Za-z0-9-]+)?(?:(| )\(.*)?([ ]+)?}}"
+					"lineageMatch": "{{>([ ]+)?([A-Za-z0-9-_]+)(?:\:[A-Za-z0-9-]+)?(?:(| )\(.*)?([ ]+)?}}",
+					"lineageMatchKey": 2
 				 }
 			]
 		}
