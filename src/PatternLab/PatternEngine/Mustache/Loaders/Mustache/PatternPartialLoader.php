@@ -1,12 +1,12 @@
 <?php
 
 /*!
- * Mustache Pattern Loader Class
+ * Mustache Pattern Partial Loader Class
  *
  * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
  * Licensed under the MIT license
  *
- * The Mustache Pattern Loader has been modified from the FilesystemLoader
+ * The Mustache Pattern Partial Loader has been modified from the FilesystemLoader
  * in Justin Hileman's implementation of Mustache
  *
  */
@@ -15,7 +15,7 @@ namespace PatternLab\PatternEngine\Mustache\Loaders\Mustache;
 
 use \PatternLab\PatternEngine\Util;
 
-class PatternLoader implements \Mustache_Loader {
+class PatternPartialLoader implements \Mustache_Loader {
 	
 	private $baseDir;
 	private $extension    = '.mustache';
