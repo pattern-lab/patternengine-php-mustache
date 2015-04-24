@@ -26,6 +26,7 @@ class FilesystemLoader extends Loader {
 		$mustacheOptions["loader"]          = new \Mustache_Loader_FilesystemLoader($options["templatePath"]);
 		$mustacheOptions["partials_loader"] = new \Mustache_Loader_FilesystemLoader($options["partialsPath"]);
 		$mustacheOptions["helpers"]         = MustacheUtil::loadHelpers();
+		$mustacheOptions["pragmas"]         = \Mustache_Engine::PRAGMA_FILTERS;
 		
 		$this->instance = new \Mustache_Engine($mustacheOptions);
 		
