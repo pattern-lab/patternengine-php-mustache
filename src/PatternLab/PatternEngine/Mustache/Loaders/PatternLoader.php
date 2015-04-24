@@ -16,7 +16,7 @@ use \PatternLab\Config;
 use \PatternLab\Dispatcher;
 use \PatternLab\PatternEngine\Mustache\Loaders\Mustache\PatternStringLoader as Mustache_Loader_PatternStringLoader;
 use \PatternLab\PatternEngine\Mustache\Loaders\Mustache\PatternPartialLoader as Mustache_Loader_PatternPartialLoader;
-use \PatternLab\PatternEngine\Mustache\Helper;
+use \PatternLab\PatternEngine\Mustache\MustacheUtil;
 use \PatternLab\PatternEngine\Loader;
 
 class PatternLoader extends Loader {
@@ -26,15 +26,13 @@ class PatternLoader extends Loader {
 	*/
 	public function __construct($options = array()) {
 		
-		Dispatcher::getInstance()->dispatch("mustacheRule.gatherHelpers");
-		
 		//default var
 		$patternSourceDir = Config::getOption("patternSourceDir");
 		
 		$mustacheOptions                    = array();
 		$mustacheOptions["loader"]          = new Mustache_Loader_PatternStringLoader();
 		$mustacheOptions["partials_loader"] = new Mustache_Loader_PatternPartialLoader($patternSourceDir,array("patternPaths" => $options["patternPaths"]));
-		$mustacheOptions["helpers"]         = Helper::get();
+		$mustacheOptions["helpers"]         = MustacheUtil::loadHelpers();
 		
 		$this->instance = new \Mustache_Engine($mustacheOptions);
 		
