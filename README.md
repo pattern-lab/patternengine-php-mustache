@@ -1,12 +1,82 @@
 # Mustache PatternEngine for Pattern Lab PHP
 
-The Mustache PatternEngine allows you to use [Mustache](https://mustache.github.io) as the template language for Pattern Lab PHP.  Once the PatternEngine is installed you can use Mustache-based StarterKits and StyleguideKits.
+The Mustache PatternEngine allows you to use [Mustache](https://mustache.github.io) as the template language for Pattern Lab PHP. Once the PatternEngine is installed you can use Mustache-based StarterKits and StyleguideKits.
 
 ## Installation
 
-Pattern Lab PHP uses [Composer](https://getcomposer.org/) to manage project dependencies. To install the Mustache PatternEngine:
+The Mustache PatternEngine will come pre-installed with the **Pattern Lab Standard Edition**.
+
+### Composer
+
+Pattern Lab PHP uses [Composer](https://getcomposer.org/) to manage project dependencies with Pattern Lab Editions. To add the Mustache PatternEngine to the dependencies list for your Edition you can type the following in the command line at the base of your project:
 
     composer require pattern-lab/patternengine-mustache
+
+See Packagist for [information on the latest release](https://packagist.org/packages/pattern-lab/patternengine-mustache).
+
+## Overview
+
+This document is broken into two parts:
+
+* [Extending Mustache](#extending-mustache)
+* [Available Loaders for Plugin Developers](#available-loaders)
+
+## Extending Mustache
+
+Mustache comes with two ways to extend the underlying template parser:
+
+* [Filters](https://github.com/bobthecow/mustache.php/wiki/FILTERS-pragma)
+* Lambdas
+
+The Mustache PatternEngine enables these features via Helpers.
+
+### Helpers
+
+The requirements for using helpers with Pattern Lab:
+
+* Files must go in `source/_mustache-components/helpers`
+* Files must have the extension `.helper.php` (_this can be modified in the config_)
+* The helper **must** set the variable `$helper`
+* Only one helper per file (_e.g. can only set `$helper` once per file_)
+
+An example function called `verbatim.helper.twig` in `source/_mustache-components/helpers`:
+
+```php
+<?php
+
+$helper = function ($text) {
+	return "{{=%%pl pl%%=}}".$text."%%pl={{ }}=pl%%";
+};
+
+?>
+```
+
+This helper would be used like this in a pattern. Note that the tag is using the filename and that this is an example of a lambda:
+
+```mustache
+{{# verbatim }}
+	{{ this won't be parsed }}
+{{/ verbatim }}
+```
+
+Mustache also allows dot notation with helpers. An example function called `case.helper.twig` in `source/_mustache-components/helpers`:
+
+```php
+<?php
+
+$helper = array(
+    'lower' => function($value) { return strtolower((string) $value); },
+    'upper' => function($value) { return strtoupper((string) $value); },
+));
+
+?>
+```
+
+This helper would be used like this in a pattern. Note that the tag is using the filename and that this is an example of a filter:
+
+```mustache
+{{ greeting | case.upper }}
+```
 
 ## Available Loaders
 
