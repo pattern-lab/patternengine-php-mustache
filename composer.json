@@ -35,7 +35,8 @@
 				{
 					"lineageMatch": "{{>([ ]+)?([A-Za-z0-9-_]+)(?:\\:[A-Za-z0-9-]+)?(?:(| )\\(.*)?([ ]+)?}}",
 					"lineageMatchKey": 2,
-					"patternExtension": "mustache"
+					"patternExtension": "mustache",
+					"mustacheHelperExt": "helper.php"
 				 }
 			]
 		}
