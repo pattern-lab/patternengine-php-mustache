@@ -13,6 +13,7 @@
 namespace PatternLab\PatternEngine\Mustache\Loaders;
 
 use \PatternLab\PatternEngine\Loader;
+use \PatternLab\PatternEngine\Mustache\MustacheUtil;
 
 class StringLoader extends Loader {
 	
@@ -21,7 +22,10 @@ class StringLoader extends Loader {
 	*/
 	public function __construct($options = array()) {
 		
-		$this->instance = new \Mustache_Engine;
+		$mustacheOptions                    = array();
+		$mustacheOptions["helpers"]         = MustacheUtil::loadHelpers();
+		
+		$this->instance = new \Mustache_Engine($mustacheOptions);
 		
 	}
 	
