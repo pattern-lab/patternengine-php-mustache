@@ -13,6 +13,7 @@
 namespace PatternLab\PatternEngine\Mustache\Loaders;
 
 use \PatternLab\PatternEngine\Loader;
+use \PatternLab\PatternEngine\Mustache\MustacheUtil;
 
 class FilesystemLoader extends Loader {
 	
@@ -24,6 +25,7 @@ class FilesystemLoader extends Loader {
 		$mustacheOptions                    = array();
 		$mustacheOptions["loader"]          = new \Mustache_Loader_FilesystemLoader($options["templatePath"]);
 		$mustacheOptions["partials_loader"] = new \Mustache_Loader_FilesystemLoader($options["partialsPath"]);
+		$mustacheOptions["helpers"]         = MustacheUtil::loadHelpers();
 		
 		$this->instance = new \Mustache_Engine($mustacheOptions);
 		
