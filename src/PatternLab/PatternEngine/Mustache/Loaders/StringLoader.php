@@ -24,7 +24,7 @@ class StringLoader extends Loader {
 		
 		$mustacheOptions                    = array();
 		$mustacheOptions["helpers"]         = MustacheUtil::loadHelpers();
-		$mustacheOptions["pragmas"]         = \Mustache_Engine::PRAGMA_FILTERS;
+		$mustacheOptions["pragmas"]         = array(\Mustache_Engine::PRAGMA_FILTERS);
 		
 		$this->instance = new \Mustache_Engine($mustacheOptions);
 		

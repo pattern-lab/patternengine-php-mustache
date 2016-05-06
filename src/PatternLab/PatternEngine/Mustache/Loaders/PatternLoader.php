@@ -33,7 +33,7 @@ class PatternLoader extends Loader {
 		$mustacheOptions["loader"]          = new Mustache_Loader_PatternStringLoader();
 		$mustacheOptions["partials_loader"] = new Mustache_Loader_PatternPartialLoader($patternSourceDir,array("patternPaths" => $options["patternPaths"]));
 		$mustacheOptions["helpers"]         = MustacheUtil::loadHelpers();
-		$mustacheOptions["pragmas"]         = \Mustache_Engine::PRAGMA_FILTERS;
+		$mustacheOptions["pragmas"]         = array(\Mustache_Engine::PRAGMA_FILTERS);
 		
 		$this->instance = new \Mustache_Engine($mustacheOptions);
 		
