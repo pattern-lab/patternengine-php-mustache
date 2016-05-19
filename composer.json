@@ -23,7 +23,6 @@
 			"PatternLab\\PatternEngine\\Mustache": "src/"
 		}
 	},
-	"minimum-stability": "dev",
 	"require": {
 		"pattern-lab/core":  "^2.0.0",
 		"mustache/mustache": "~2.6"
