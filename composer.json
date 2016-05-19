@@ -30,13 +30,12 @@
 	},
 	"extra": {
 		"patternlab": {
-			"config": [
-				{
-					"lineageMatch": "{{>([ ]+)?([A-Za-z0-9-_]+)(?:\\:[A-Za-z0-9-]+)?(?:(| )\\(.*)?([ ]+)?}}",
-					"lineageMatchKey": 2,
-					"patternExtension": "mustache"
-				 }
-			]
+			"config": {
+				"lineageMatch": "{{>([ ]+)?([A-Za-z0-9-_]+)(?:\\:[A-Za-z0-9-]+)?(?:(| )\\(.*)?([ ]+)?}}",
+				"lineageMatchKey": 2,
+				"patternExtension": "mustache",
+				"mustacheHelperExt": "helper.php"
+			}
 		}
 	}
 }

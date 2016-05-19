@@ -13,18 +13,23 @@
 namespace PatternLab\PatternEngine\Mustache\Loaders;
 
 use \PatternLab\PatternEngine\Loader;
+use \PatternLab\PatternEngine\Mustache\MustacheUtil;
 
 class StringLoader extends Loader {
-	
+
 	/**
 	* Load a new Mustache instance that is just a vanilla Mustache rendering engine for strings
 	*/
 	public function __construct($options = array()) {
-		
-		$this->instance = new \Mustache_Engine;
-		
+
+		$mustacheOptions                    = array();
+		$mustacheOptions["helpers"]         = MustacheUtil::loadHelpers();
+		$mustacheOptions["pragmas"]         = array(\Mustache_Engine::PRAGMA_FILTERS);
+
+		$this->instance = new \Mustache_Engine($mustacheOptions);
+
 	}
-	
+
 	/**
 	* Render a string
 	* @param  {Array}        the options to be rendered by Mustache
@@ -32,9 +37,9 @@ class StringLoader extends Loader {
 	* @return {String}       the rendered result
 	*/
 	public function render($options = array()) {
-		
+
 		return $this->instance->render($options["string"], $options["data"]);
-		
+
 	}
-	
+
 }
