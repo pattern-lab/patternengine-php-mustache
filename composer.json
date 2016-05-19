@@ -23,11 +23,10 @@
 			"PatternLab\\PatternEngine\\Mustache": "src/"
 		}
 	},
-	"minimum-stability": "dev",
 	"require": {
-		"php":               ">=5.3.6",
 		"mustache/mustache": "~2.6",
-		"pattern-lab/core":  "dev-dev"
+		"pattern-lab/core":  "dev-dev",
+                "mustache/mustache": "~2.6"
 	},
 	"extra": {
 		"patternlab": {
