@@ -48,7 +48,7 @@ An example function called `verbatim.helper.mustache` in `./source/_mustache-com
 <?php
 
 $helper = function ($text) {
-	return "{{=%%pl pl%%=}}".$text."%%pl={{ }}=pl%%";
+  return "{{=%%pl pl%%=}}".$text."%%pl={{ }}=pl%%";
 };
 
 ?>
@@ -58,7 +58,7 @@ This helper would be used like this in a pattern. Note that the tag is using the
 
 ```mustache
 {{# verbatim }}
-	{{ this won't be parsed }}
+  {{ this won't be parsed }}
 {{/ verbatim }}
 ```
 
