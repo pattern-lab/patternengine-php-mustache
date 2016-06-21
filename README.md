@@ -1,3 +1,6 @@
+![license](https://img.shields.io/github/license/pattern-lab/patternengine-php-mustache.svg?maxAge=2592000)
+[![Packagist](https://img.shields.io/packagist/v/pattern-lab/patternengine-mustache.svg?maxAge=2592000)](https://packagist.org/packages/pattern-lab/patternengine-mustache) [![Gitter](https://img.shields.io/gitter/room/pattern-lab/php.svg?maxAge=2592000)](https://gitter.im/pattern-lab/php)
+
 # Mustache PatternEngine for Pattern Lab PHP
 
 The Mustache PatternEngine allows you to use [Mustache](https://mustache.github.io) as the template language for Pattern Lab PHP. Once the PatternEngine is installed you can use Mustache-based StarterKits and StyleguideKits.
@@ -34,18 +37,18 @@ The Mustache PatternEngine enables these features via Helpers.
 
 The requirements for using helpers with Pattern Lab:
 
-* Files must go in `source/_mustache-components/helpers`
+* Files must go in `./source/_mustache-components/helpers`
 * Files must have the extension `.helper.php` (_this can be modified in the config_)
 * The helper **must** set the variable `$helper`
 * Only one helper per file (_e.g. can only set `$helper` once per file_)
 
-An example function called `verbatim.helper.twig` in `source/_mustache-components/helpers`:
+An example function called `verbatim.helper.mustache` in `./source/_mustache-components/helpers`:
 
 ```php
 <?php
 
 $helper = function ($text) {
-	return "{{=%%pl pl%%=}}".$text."%%pl={{ }}=pl%%";
+  return "{{=%%pl pl%%=}}".$text."%%pl={{ }}=pl%%";
 };
 
 ?>
@@ -55,11 +58,11 @@ This helper would be used like this in a pattern. Note that the tag is using the
 
 ```mustache
 {{# verbatim }}
-	{{ this won't be parsed }}
+  {{ this won't be parsed }}
 {{/ verbatim }}
 ```
 
-Mustache also allows dot notation with helpers. An example function called `case.helper.twig` in `source/_mustache-components/helpers`:
+Mustache also allows dot notation with helpers. An example function called `case.helper.mustache` in `./source/_mustache-components/helpers`:
 
 ```php
 <?php
